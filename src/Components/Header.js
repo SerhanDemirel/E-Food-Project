@@ -19,7 +19,7 @@ function Header() {
       </div>
 
       <div className='profile'>
-        <h3 className='name'> Burak Mercan </h3>
+        <h3 className='name'> Serhan Demirel </h3>
       </div>
       
   </header>
