@@ -1,0 +1,504 @@
+.App { 
+  width: 100vw;
+  height: 100vh;
+  background: rgb(206, 69, 54);
+  overflow-x: hidden;
+}
+
+.App::-webkit-scrollbar{
+  display: none;
+}
+
+/* Ust Kısım Css */
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content:space-between ;
+  padding: 5px 15px;
+  height: 60px;
+  width: 100%;
+  background-color:beige;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  box-shadow: 0px 3px 20px rgba(0,0, 0,0.2);
+}
+
+.logo {
+  min-width: 80px;
+  width: 80px;
+}
+
+.profile{
+  display: flex;
+  align-items: center;
+}
+
+.profile .name {
+  color: rgb(206, 69, 54);
+  margin-left: 8px;
+  font-size: 24px;
+}
+
+.shoppingBag{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.shoppingBag .bag{
+  width: 50px;
+  height: 50px;
+  color: rgb(206, 69, 54);
+}
+
+.shoppingBag .bag_content { 
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: rgb(206, 69, 54);
+  min-width: 20px;
+  min-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -3px;
+  right: -10px;
+}
+.shoppingBag .noBagItem { 
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: rgb(206, 69, 54);
+  min-width: 20px;
+  min-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -3px;
+  right: -10px;
+}
+.shoppingBag .noBagItem p{
+  color: beige;
+  font-weight: 500;
+}
+.shoppingBag .bag_content p{
+  color: beige;
+  font-weight: 500;
+}
+
+/* Ana Kısım Css*/
+
+main{
+  width: 100%;
+  height: 1200px;
+  margin-top: 60px;
+
+}
+
+.subMenuContainer h3{
+  font-size: 20px;
+  font-weight: 600;
+  color: beige;
+  margin-top: 80px;
+  margin-left: 20px;
+}
+
+.rowContainer{
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x:scroll;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.rowContainer::-webkit-scrollbar{
+  display: none;
+}
+
+.rowFoodCard{
+  width: 120px;
+  min-width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  background-color: beige;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 5px;
+  box-shadow: 0px 0px 20px rgba(0,0, 0,0.2);
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.rowFoodCard .imgBox{
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  min-height: 70px;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.rowFoodCard .imgBox img{
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.rowFoodCard:hover, .imgBox img, .rowFoodCard.active .imgBox img{
+  transition: 0,5s;
+}
+
+.rowFoodCard .h3{
+ color: rgb(206, 69, 54);
+ font-size: 16px;
+}
+
+.rowFoodCard:hover, .h3 .rowFoodCard.active .h3{
+  color: beige;
+}
+
+.rowFoodCard .menuLoad{
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(206, 69, 54);
+}
+
+.rowFoodCard:hover, .menuLoad .rowFoodCard.active .menuLoad{
+  background-color: rgb(236, 173, 140);
+}
+
+.rowFoodCard .menuLoad .MuiSvgIcon-root{
+  font-size: 20px;
+  color: beige;
+}
+
+.rowFoodCard:hover, .menuLoad .MuiSvgIcon-root .rowFoodCard.active .menuLoad.MuiSvgIcon-root{
+  color: beige;
+}
+
+.dishItemContainer{
+  width: 1150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ItemCard{
+  width: 160px;
+  height: 180px;
+  position: relative;
+  background-color: beige;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.ItemCard .imgBox{
+  width: 120px;
+  height: 120px;
+  border-radius: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+
+}
+
+.ItemCard .imgBox img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.itemContent .itemName{
+  font-size: 20px;
+  color: rgb(206, 69, 54);
+}
+
+.itemContent .bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(206, 69, 54);
+}
+
+.itemContent .bottom .price{
+  padding-bottom: 7px;
+  font-size: 20px;
+}
+
+.itemContent .bottom .price span{
+  font-size: 20px;
+}
+
+.itemContent .addToBag{
+  background-color: rgb(206, 69, 54);
+  border-radius: 5px;
+  display: flex;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.itemContent .addToBag .MuiSvgIcon-root{
+  color: beige;
+  font-size: 25px;
+}
+
+.buyingMenu{
+  width: 350px;
+  height: 100%;
+  background-color: beige;
+  position: fixed;
+  right: 0;
+  top: 60px;
+  z-index: 105;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  transition: transform 0.5s cubic-bezier(0.175,0.885,0.32,1.275);
+  box-shadow: 0px 3px 20px rgba(0,0, 0,0.2);
+}
+
+.bagContainer{
+  width: 100%;
+  min-height: 280px;
+  max-height: 350px;
+  margin-top: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+
+.bagCheckOut{
+  height: 400px;
+  width: 100%;
+  min-width: 320px;
+}
+
+.bagContainer::-webkit-scrollbar{
+  display: none;
+}
+
+.bagContainer .subMenuContainer h3{
+  color: rgb(206, 69, 54);
+  margin-left: 3px;
+}
+
+.bagItem{
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.bagItem .imgBox{
+  width: 60px;
+  min-width: 60px;
+  height: 60px;
+  min-height: 60px;
+  background-color: rgb(206, 69, 54);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.bagItem .imgBox img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bagItem .itemSection{
+  margin-left: 10px;
+  background-color: rgb(206, 69, 54);
+  width: 220px;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.bagItem .itemSection .itemName{
+  font-size: 20px;
+  color: beige;
+  margin-left: 10px;
+}
+
+.bagItem .itemSection .itemQuantity{
+  margin-left: 10px;
+  font-size: 20px;
+  color: beige;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.bagItem .itemSection .itemQuantity span{
+  color: beige;
+}
+
+.bagItem .itemSection .itemQuantity .quantity{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 60px;
+}
+
+.bagItem .itemSection .itemQuantity .quantity .itemAdd,
+.bagItem .itemSection .itemQuantity .quantity .itemRemove{
+  color: rgb(206, 69, 54);
+  background-color: beige;
+  font-size: 24px;
+  border-radius: 5px;
+}
+
+.bagItem .itemSection .itemPrice{
+  font-size: 20px;
+  background-color: rgb(206, 69, 54);
+  align-items: center;
+  margin-left: 170px;
+  margin-top: -10px;
+  border-radius: 5px;
+}
+
+.bagItem .itemSection .itemPrice .tlSign{
+  color: beige;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.bagItem .itemSection .itemPrice .itemPriceValue{
+  color: beige;
+  font-size: 20px;
+}
+
+.toplamFiyat{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 8px;
+  margin: 15px 0;
+}
+
+.toplamFiyat h3{
+  font-size: 20px;
+  color: rgb(206, 69, 54);
+}
+
+.toplamFiyat p{
+  font-size: 20px;
+  color: rgb(206, 69, 54);
+}
+
+.toplamFiyat p span{
+  font-size: 20px;
+  color: rgb(206, 69, 54);
+
+}
+
+.tamamla{
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 10px 20px;
+  background: rgb(206, 69, 54);
+  border-radius: 100vw;
+  color: beige;
+  font-size: 20px;
+}
+
+.dishCon .dishConContent{
+  color: beige;
+  margin-left: 20px;
+  font-size: 22px;
+}
+
+.buyingMenu .addSomeItem{
+  margin-top: 60px;
+}
+
+.buyingMenu .addSomeItem .emptyBagh2{
+  color: rgb(206, 69, 54);
+  font-size: 25px;
+  margin-left: 100px;
+  display: flex;
+}
+
+.buyingMenu .adiniz{
+  border-width: 4px;
+  border-color: rgb(206, 69, 54);
+  margin-bottom: 5px;
+  border-radius: 5px;
+  align-items: center;
+  background-color: beige;
+  color: rgb(206, 69, 54);
+  height: 25px;
+  width: 300px;
+}
+
+.buyingMenu .soyadiniz{
+  border-width: 4px;
+  border-color: rgb(206, 69, 54);
+  margin-bottom: 5px;
+  border-radius: 5px;
+  align-items: center;
+  background-color: beige;
+  color: rgb(206, 69, 54);
+  height: 25px;
+  width: 300px;
+}
+
+.buyingMenu .email{
+  border-width: 4px;
+  border-color: rgb(206, 69, 54);
+  margin-bottom: 5px;
+  border-radius: 5px;
+  align-items: center;
+  background-color: beige;
+  color: rgb(206, 69, 54);
+  height: 25px;
+  width: 300px;
+}
+
+.buyingMenu .adres{
+  border-width: 4px;
+  border-color: rgb(206, 69, 54);
+  margin-bottom: 5px;
+  border-radius: 5px;
+  align-items: center;
+  background-color: beige;
+  color: rgb(206, 69, 54);
+  height: 25px;
+  width: 300px;
+}
+
+.buyingMenu .giris{
+  color: rgb(206, 69, 54);
+  margin-bottom: 10px;
+}
